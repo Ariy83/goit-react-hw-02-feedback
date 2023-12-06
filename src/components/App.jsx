@@ -1,5 +1,5 @@
 import React from "react"
-import { ButtonsStyled } from "./Buttons/ButtonsStyled"
+import { Buttons } from "./Buttons/Buttons"
 import { Statistics } from "./Statistics/Statistics"
 
 const Section = ({title,children}) => {
@@ -59,11 +59,11 @@ state = {
       }}
    >
     <Section title="Please leave feedback">
-      <ButtonsStyled keysArr={this.getStateKeys()} handleClickBtn={this.handleClickBtn} />
+      <Buttons keysArr={this.getStateKeys()} handleClickBtn={this.handleClickBtn} />
      </Section>
      
      <Section title="Statistics">
-       {!this.state.good && !this.state.neutral && !this.state.bad ?
+       {!this.countTotalFeedback() ?
          (<Notification message="There is no feedback" />) :
          (<><Statistics keysArr={this.getStateKeys()} valuesArr={this.getStateValues()} />
          <p>Total: { this.countTotalFeedback()}</p>
