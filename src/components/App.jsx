@@ -34,7 +34,7 @@ state = {
 
   handleClickBtn = (item) => {
     this.setState((prevState) => ({ [item]: prevState[item] + 1 }));
-    // this.countTotalFeedback()
+    
   }
 
   countTotalFeedback = () => {
